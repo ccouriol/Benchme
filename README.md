@@ -8,8 +8,9 @@
 
 - [ ] bubble sort
 - [ ] heap sort
-- [ ] selection sort
+- [x] selection sort
 - [ ] insertion sort
+- [ ] ascending and descending for each algorithms
 
 #### Project todo
 
