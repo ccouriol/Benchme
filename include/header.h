@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define SIZE 1000000
+#define SIZE 100
 #define MAXVAL 1000
 
 void printArr(float *arr);
