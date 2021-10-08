@@ -3,8 +3,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
-#define SIZE 5
+#define SIZE 1000000
+#define MAXVAL 1000
 
 void printArr(float *arr);
 void swap(float *x1, float *x2);
