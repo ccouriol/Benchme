@@ -1,5 +1,15 @@
 # Benchme
 
+## Build
+
+```bash
+git clone https://github.com/ccouriol/Benchme/
+cd Benchme/
+make run #compile and run the program
+make doc #create the documentation (./docs/html/index.html)
+make clean #delete the documentation & program
+```
+
 ### Todo:
 
 #### Algorithms
