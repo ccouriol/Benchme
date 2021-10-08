@@ -16,15 +16,16 @@ make clean #delete the documentation & program
 
 > float number array
 
-- [ ] bubble sort
+- [x] bubble sort
 - [ ] heap sort
 - [x] selection sort
 - [ ] insertion sort
 - [ ] ascending and descending for each algorithms
+- [ ] get algorithm time
 
 #### Project todo
 
-- [ ] generate doc
+- [x] generate doc
 - [ ] export as csv
 
 #### Work rules
@@ -36,7 +37,7 @@ make clean #delete the documentation & program
 
 - [ ] good coding practices
 - [x] structurated (.c .h)
-- [ ] scalable code (new algo, change array size)
+- [x] scalable code (new algo, change array size)
 - [x] correctly tabbed commented (javadoc / doxygen)
-- [ ] `make documentation` creates doc
+- [x] `make documentation` creates doc
 - [ ] `benchme data.txt` / `benchme result.csv`

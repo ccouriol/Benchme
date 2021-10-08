@@ -69,7 +69,8 @@ OBJECTS		:= $(SOURCES:.c=.o)
 # deleting dependencies appended to the file from 'make depend'
 #
 
-OUTPUTMAIN	:= $(call FIXPATH,$(OUTPUT)/$(MAIN))
+# OUTPUTMAIN	:= $(call FIXPATH,$(OUTPUT)/$(MAIN))
+OUTPUTMAIN	:= $(call FIXPATH,$(OUTPUT)/benchme)
 
 all: $(OUTPUT) $(MAIN)
 	@echo Executing 'all' complete!
