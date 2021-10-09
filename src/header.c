@@ -25,7 +25,7 @@
 void printArr(float *arr)
 {
   for (int i = 0; i < SIZE; i++)
-    printf("%f\n", arr[i]);
+    printf("%f | ", arr[i]);
 }
 
 /*!

@@ -14,6 +14,7 @@
 #include "../include/selectionsort.h"
 #include "../include/header.h"
 #include "../include/bubblesort.h"
+#include "../include/insertionsort.h"
 
 /*!
 * \fn int main(int argc, char **argv)
@@ -34,24 +35,33 @@ int main(int argc, char **argv)
 	float *selectArrAsc = selectionsortAsc(array);
 	float *selectArrDesc = selectionsortDesc(array);
 
+	float *ptrInsertAsc = insertionSortAsc(array);
+	float *ptrInsertDesc = insertionSortDesc(array);
+
+	float *ptr_bb_asc = bubbleSortAsc(array);
+	float *ptr_bb_dsc = bubbleSortDesc(array);
+
 	puts("Tableau avec des valeurs aleatoires:");
 	printArr(array);
 	puts("-----");
+
+	printArr(ptrInsertAsc);
+	puts("Insertion Asc^");
+
+	printArr(ptrInsertDesc);
+	puts("Insertion Desc^");
 
 	printArr(selectArrAsc);
 	puts("Selection Asc^");
 
 	printArr(selectArrDesc);
 	puts("Selection Desc^");
-
-	float *ptr_bb_asc = bubbleSortAsc(array);
-	float *ptr_bb_dsc = bubbleSortDesc(array);
-
-	puts("--> Tri à bulle croissant:");
+	
 	printArr(ptr_bb_asc);
+	puts("Bubble Asc^");
 
-	puts("--> Tri à bulle decroissant:");
 	printArr(ptr_bb_dsc);
+	puts("Bubble Desc^");
 
 	return 0;
 }
