@@ -3,7 +3,7 @@
 * \author Cédric Gabette
 * \version 0.1
 * \date 08/10/2021
-* \brief 
+* \brief Algorithme de tri à bulle
 * \remarks None
 * 
 * 
