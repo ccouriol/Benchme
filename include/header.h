@@ -11,5 +11,6 @@
 void printArr(float *arr);
 void swap(float *x1, float *x2);
 void generateArray(float *arr);
+void copyFloatArray(float *arr, float *original);
 
 #endif
