@@ -10,7 +10,7 @@
 * 
 */
 
-/*! Importation of librairies*/
+/*! Importation of libraries*/
 #include "../include/bubblesort.h"
 #include "../include/header.h"
 
@@ -32,11 +32,7 @@ float *bubbleSortAsc(float *param)
     float swap;
 
     //On copie les valeurs
-    for (i = 0; i < SIZE; i++)
-    {
-        tab[i] = *param;
-        param++;
-    }
+    copyFloatArray(tab, param);
 
     //Algo de tri : On compare le terme de gauche avec son voisin de droite on
     //compare et on inverse leur position si la condition n'est pas vérifié.
@@ -84,11 +80,7 @@ float *bubbleSortDesc(float *param)
     float swap;
 
     //On copie les valeurs
-    for (i = 0; i < SIZE; i++)
-    {
-        tab[i] = *param;
-        param++;
-    }
+    copyFloatArray(tab, param);
 
     //Algo de tri : On compare le terme de gauche avec son voisin de droite on
     //compare et on inverse leur position si la condition n'est pas vérifié.
