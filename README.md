@@ -17,10 +17,10 @@ make clean #delete the documentation & program
 > float number array
 
 - [x] bubble sort
-- [ ] heap sort
+- [x] heap sort
 - [x] selection sort
 - [ ] insertion sort
-- [ ] ascending and descending for each algorithms
+- [x] ascending and descending for each algorithms
 - [ ] get algorithm time
 
 #### Project todo
@@ -35,7 +35,7 @@ make clean #delete the documentation & program
 
 #### Code practices
 
-- [ ] good coding practices
+- [ ] (50/100) good coding practices
 - [x] structurated (.c .h)
 - [x] scalable code (new algo, change array size)
 - [x] correctly tabbed commented (javadoc / doxygen)
