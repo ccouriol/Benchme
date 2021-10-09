@@ -52,14 +52,13 @@ void swap(float *x, float *y)
 }
 
 /*!
-* \fn float *generateArray(float *arr)
+* \fn void generateArray(float *arr)
 * \author Clement Couriol
 * \version 0.1
 * \date  07/10/2021
 * \brief Puts pseudo random values in a float array
 * \remarks None
 * \param arr 
-* \return 
 */
 void generateArray(float *arr, int size)
 {
@@ -67,4 +66,20 @@ void generateArray(float *arr, int size)
 
   for (int i = 0; i < size; i++)
     arr[i] = ((float)rand() / (float)(RAND_MAX)) * MAXVAL;
+}
+
+/*!
+* \fn void copyArray(float *arr, float *original)
+* \author Clément Couriol
+* \version 0.1
+* \date  09/10/2021
+* \brief Copy a float array to another float array
+* \remarks None
+* \param arr 
+* \param original 
+*/
+void copyFloatArray(float *arr, float *original)
+{
+  for (int i = 0; i < SIZE; i++)
+    arr[i] = original[i];
 }
