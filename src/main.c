@@ -14,6 +14,7 @@
 #include "../include/selectionsort.h"
 #include "../include/header.h"
 #include "../include/bubblesort.h"
+#include "../include/heapsort.h"
 
 /*!
 * \fn int main(int argc, char **argv)
@@ -30,6 +31,16 @@ int main(int argc, char **argv)
 {
 	float array[SIZE];
 	generateArray(array);
+
+	float *arraySortAsc = heapsortAsc(array);
+	float *arraySortDesc = heapsortDesc(array);
+
+	printArr(array);
+	puts("-----");
+	printArr(arraySortAsc);
+	puts("arraySortAsc^^");
+	printArr(arraySortDesc);
+	puts("arraySortDesc^^");
 
 	float *selectArrAsc = selectionsortAsc(array);
 	float *selectArrDesc = selectionsortDesc(array);
