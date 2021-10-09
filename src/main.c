@@ -16,6 +16,7 @@
 #include "../include/bubblesort.h"
 #include "../include/insertionsort.h"
 #include <time.h>
+#include "../include/heapsort.h"
 
 /*!
 * \fn int main(int argc, char **argv)
