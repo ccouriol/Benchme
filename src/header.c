@@ -11,7 +11,6 @@
 */
 
 /*! Importation of libraries*/
-/*! Importation of librairies*/
 #include "../include/header.h"
 
 /*!
@@ -65,7 +64,7 @@ void swap(float *x, float *y)
 }
 
 /*!
-* \fn void generateArray(float *arr, int size)
+* \fn void generateArray(float *arr, int size, int i)
 * \author Clement Couriol
 * \version 0.1
 * \date  07/10/2021
@@ -73,10 +72,11 @@ void swap(float *x, float *y)
 * \remarks None
 * \param arr 
 * \param size
+* \param i
 */
-void generateArray(float *arr, int size)
+void generateArray(float *arr, int size, int i)
 {
-  srand(time(NULL));
+  srand(time(NULL) * i);
 
   for (int i = 0; i < size; i++)
     arr[i] = ((float)rand() / (float)(RAND_MAX)) * MAXVAL;
@@ -97,4 +97,27 @@ void copyFloatArray(float *arr, float *original, int size)
 {
   for (int i = 0; i < size; i++)
     arr[i] = original[i];
+}
+
+/*!
+* \fn char *replaceChar(char *str, char find, char replace)
+* \author Clément Couriol
+* \version 0.1
+* \date  10/10/2021
+* \brief Replace a char in a string by another char
+* \remarks None
+* \param str 
+* \param find 
+* \param replace 
+* \return 
+*/
+char *replaceChar(char *str, char find, char replace)
+{
+  char *current_pos = strchr(str, find);
+  while (current_pos)
+  {
+    *current_pos = replace;
+    current_pos = strchr(current_pos, find);
+  }
+  return str;
 }
