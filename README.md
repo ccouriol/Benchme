@@ -11,6 +11,8 @@ make doc #create the documentation (./docs/html/index.html)
 make clean #delete the documentation & program
 ```
 
+### /!\ il faut remplacer les . par des , dans le .csv pour avoir le graph
+
 ### Todo:
 
 #### Algorithms
