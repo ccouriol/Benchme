@@ -11,16 +11,18 @@
 */
 
 /*! Importation of libraries*/
+/*! Importation of librairies*/
 #include "../include/header.h"
 
 /*!
-* \fn void printArr(float *arr)
+* \fn void printArr(float *arr, int size)
 * \author Clement Couriol
 * \version 0.1
 * \date  07/10/2021
 * \brief Print all values of a float array
 * \remarks None
 * \param arr 
+* \param size
 */
 void printArr(float *arr, int size)
 {
@@ -28,6 +30,17 @@ void printArr(float *arr, int size)
     printf("%f | ", arr[i]);
 }
 
+/*!
+* \fn void printArrCSV(float *arr, void *ptrFile, int size)
+* \author Cédric Gabette
+* \version 0.1
+* \date  10/10/2021
+* \brief 
+* \remarks None
+* \param arr 
+* \param ptrFile 
+* \param size 
+*/
 void printArrCSV(float *arr, void *ptrFile, int size)
 {
   for (int i = 0; i < size; i++)
@@ -52,13 +65,14 @@ void swap(float *x, float *y)
 }
 
 /*!
-* \fn void generateArray(float *arr)
+* \fn void generateArray(float *arr, int size)
 * \author Clement Couriol
 * \version 0.1
 * \date  07/10/2021
 * \brief Puts pseudo random values in a float array
 * \remarks None
 * \param arr 
+* \param size
 */
 void generateArray(float *arr, int size)
 {
@@ -69,7 +83,7 @@ void generateArray(float *arr, int size)
 }
 
 /*!
-* \fn void copyArray(float *arr, float *original)
+* \fn void copyFloatArray(float *arr, float *original, int size)
 * \author Clément Couriol
 * \version 0.1
 * \date  09/10/2021
@@ -77,6 +91,7 @@ void generateArray(float *arr, int size)
 * \remarks None
 * \param arr 
 * \param original 
+* \param size
 */
 void copyFloatArray(float *arr, float *original, int size)
 {

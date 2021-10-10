@@ -15,13 +15,14 @@
 #include "../include/header.h"
 
 /*!
-* \fn float *bubbleSortAsc(float *param)
+* \fn float *bubbleSortAsc(float *param, int size)
 * \author Cédric Gabette
 * \version 0.1
 * \date  08/10/2021
 * \brief Référence un tri avec un tri un bulle sur des valeur aléatoires.
 * \remarks None
 * \param param 
+* \param size
 * \return 
 */
 float *bubbleSortAsc(float *param, int size)
@@ -63,13 +64,14 @@ float *bubbleSortAsc(float *param, int size)
 }
 
 /*!
-* \fn float *bubbleSortDesc(float *param)
+* \fn float *bubbleSortDesc(float *param, int size)
 * \author Cédric Gabette
 * \version 0.1
 * \date  08/10/2021
 * \brief 
 * \remarks None
 * \param param 
+* \param size
 * \return 
 */
 float *bubbleSortDesc(float *param, int size)

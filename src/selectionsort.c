@@ -15,13 +15,14 @@
 #include "../include/header.h"
 
 /*!
-* \fn float *selectionsortAsc(float *array)
+* \fn float *selectionsortAsc(float *array, int size)
 * \author Clement Couriol
 * \version 0.1
 * \date  07/10/2021
 * \brief Sort ascendingly a float array with selection algorithm
 * \remarks None
 * \param array 
+* \param size
 * \return 
 */
 float *selectionsortAsc(float *array, int size)
@@ -48,13 +49,14 @@ float *selectionsortAsc(float *array, int size)
 }
 
 /*!
-* \fn float *selectionsortDesc(float *array)
+* \fn float *selectionsortDesc(float *array, int size)
 * \author Clement Couriol
 * \version 0.1
 * \date  07/10/2021
 * \brief Sort descendingly a float array with selection algorithm
 * \remarks None
 * \param array 
+* \param size
 * \return 
 */
 float *selectionsortDesc(float *array, int size)

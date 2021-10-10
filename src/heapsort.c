@@ -81,13 +81,14 @@ void heapifyDesc(float arr[], int n, int i)
 }
 
 /*!
-* \fn float *heapsortAsc(float *array)
+* \fn float *heapsortAsc(float *array, int size)
 * \author Clément Couriol
 * \version 0.1
 * \date  09/10/2021
 * \brief Sort ascendingly a float array with heap algorithm 
 * \remarks None
 * \param array 
+* \param size
 * \return 
 */
 float *heapsortAsc(float *array, int size)
@@ -112,13 +113,14 @@ float *heapsortAsc(float *array, int size)
 }
 
 /*!
-* \fn float *heapsortDesc(float *array)
+* \fn float *heapsortDesc(float *array, int size)
 * \author Clément Couriol
 * \version 0.1
 * \date  09/10/2021
 * \brief Sort descendingly a float array with heap algorithm
 * \remarks None
 * \param array 
+* \param size
 * \return 
 */
 float *heapsortDesc(float *array, int size)
