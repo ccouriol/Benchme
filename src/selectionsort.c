@@ -39,9 +39,9 @@ float *selectionsortAsc(float *array, int size)
       //if we find a smaller value we memorize it
       if (ptrArray[j] < ptrArray[minIdx])
         minIdx = j;
-      // then we swap the minimum value at the minIdx
-      swap(&ptrArray[minIdx], &ptrArray[i]);
     }
+    // then we swap the minimum value at the minIdx
+    swap(&ptrArray[minIdx], &ptrArray[i]);
   }
 
   return ptrArray;
@@ -70,9 +70,8 @@ float *selectionsortDesc(float *array, int size)
     {
       if (ptrArray[j] > ptrArray[minIdx])
         minIdx = j;
-
-      swap(&ptrArray[minIdx], &ptrArray[i]);
     }
+    swap(&ptrArray[minIdx], &ptrArray[i]);
   }
 
   return ptrArray;
