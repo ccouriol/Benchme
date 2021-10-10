@@ -5,8 +5,9 @@
 ```bash
 git clone https://github.com/ccouriol/Benchme/
 cd Benchme/
-make run #compile and run the program
+make #compile
 make doc #create the documentation (./docs/html/index.html)
+./output/benchme output.csv
 make clean #delete the documentation & program
 ```
 
@@ -19,14 +20,14 @@ make clean #delete the documentation & program
 - [x] bubble sort
 - [x] heap sort
 - [x] selection sort
-- [ ] insertion sort
+- [x] insertion sort
 - [x] ascending and descending for each algorithms
-- [ ] get algorithm time
+- [x] get algorithm time
 
 #### Project todo
 
 - [x] generate doc
-- [ ] export as csv
+- [x] export as csv
 
 #### Work rules
 
@@ -40,4 +41,4 @@ make clean #delete the documentation & program
 - [x] scalable code (new algo, change array size)
 - [x] correctly tabbed commented (javadoc / doxygen)
 - [x] `make documentation` creates doc
-- [ ] `benchme data.txt` / `benchme result.csv`
+- [x] `benchme data.txt` / `benchme result.csv`
