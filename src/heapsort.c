@@ -90,16 +90,16 @@ void heapifyDesc(float arr[], int n, int i)
 * \param array 
 * \return 
 */
-float *heapsortAsc(float *array)
+float *heapsortAsc(float *array, int size)
 {
-  float *ptrArray = (float *)malloc(sizeof(float) * SIZE);
-  copyFloatArray(ptrArray, array);
+  float *ptrArray = (float *)malloc(sizeof(float) * size);
+  copyFloatArray(ptrArray, array, size);
 
-  for (int i = SIZE / 2 - 1; i >= 0; i--)
-    heapifyAsc(ptrArray, SIZE, i);
+  for (int i = size / 2 - 1; i >= 0; i--)
+    heapifyAsc(ptrArray, size, i);
 
   // One by one extract an element from heap
-  for (int i = SIZE - 1; i > 0; i--)
+  for (int i = size - 1; i > 0; i--)
   {
     // Move current root to end
     swap(&ptrArray[0], &ptrArray[i]);
@@ -121,15 +121,15 @@ float *heapsortAsc(float *array)
 * \param array 
 * \return 
 */
-float *heapsortDesc(float *array)
+float *heapsortDesc(float *array, int size)
 {
-  float *ptrArray = (float *)malloc(sizeof(float) * SIZE);
-  copyFloatArray(ptrArray, array);
+  float *ptrArray = (float *)malloc(sizeof(float) * size);
+  copyFloatArray(ptrArray, array, size);
 
-  for (int i = SIZE / 2 - 1; i >= 0; i--)
-    heapifyDesc(ptrArray, SIZE, i);
+  for (int i = size / 2 - 1; i >= 0; i--)
+    heapifyDesc(ptrArray, size, i);
 
-  for (int i = SIZE - 1; i > 0; i--)
+  for (int i = size - 1; i > 0; i--)
   {
     swap(&ptrArray[0], &ptrArray[i]);
     heapifyDesc(ptrArray, i, 0);

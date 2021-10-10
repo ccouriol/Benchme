@@ -32,7 +32,7 @@ float *bubbleSortAsc(float *param, int size)
     float swap;
 
     //On copie les valeurs
-    copyFloatArray(tab, param);
+    copyFloatArray(tab, param, size);
 
     //Algo de tri : On compare le terme de gauche avec son voisin de droite on
     //compare et on inverse leur position si la condition n'est pas vérifié.
@@ -80,7 +80,7 @@ float *bubbleSortDesc(float *param, int size)
     float swap;
 
     //On copie les valeurs
-    copyFloatArray(tab, param);
+    copyFloatArray(tab, param, size);
 
     //Algo de tri : On compare le terme de gauche avec son voisin de droite on
     //compare et on inverse leur position si la condition n'est pas vérifié.

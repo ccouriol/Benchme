@@ -3,8 +3,8 @@
 
 #include "../include/header.h"
 
-float *heapsortAsc(float *array);
-float *heapsortDesc(float *array);
+float *heapsortAsc(float *array, int size);
+float *heapsortDesc(float *array, int size);
 void heapifyAsc(float arr[], int n, int i);
 void heapifyDesc(float arr[], int n, int i);
 

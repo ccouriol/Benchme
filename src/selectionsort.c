@@ -28,7 +28,7 @@ float *selectionsortAsc(float *array, int size)
 {
   int minIdx = 0;
   float *ptrArray = (float *)malloc(sizeof(float) * size);
-  copyFloatArray(ptrArray, array);
+  copyFloatArray(ptrArray, array, size);
 
   for (int i = 0; i < size; i++)
   {
@@ -61,7 +61,7 @@ float *selectionsortDesc(float *array, int size)
 {
   int minIdx = 0;
   float *ptrArray = (float *)malloc(sizeof(float) * size);
-  copyFloatArray(ptrArray, array);
+  copyFloatArray(ptrArray, array, size);
 
   for (int i = 0; i < size; i++)
   {

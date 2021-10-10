@@ -78,8 +78,8 @@ void generateArray(float *arr, int size)
 * \param arr 
 * \param original 
 */
-void copyFloatArray(float *arr, float *original)
+void copyFloatArray(float *arr, float *original, int size)
 {
-  for (int i = 0; i < SIZE; i++)
+  for (int i = 0; i < size; i++)
     arr[i] = original[i];
 }
