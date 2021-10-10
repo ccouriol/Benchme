@@ -57,7 +57,7 @@ int main(int argc, char **argv)
 		for (int j = 0; j < 3; j++)
 		{
 			float array[arraySize];
-			generateArray(array, arraySize);
+			generateArray(array, arraySize, j);
 
 			begin = clock();
 			selectionsortAsc(array, arraySize);
@@ -104,15 +104,18 @@ int main(int argc, char **argv)
 			begin = clock();
 			heapsortDesc(array, arraySize);
 			end = clock();
-			average[j][7] = timeSpent;
 			timeSpent = (double)(end - begin) / CLOCKS_PER_SEC;
+			average[j][7] = timeSpent;
 		}
 		fprintf(ptrFile, "SIZE %i;", arraySize);
 
 		for (int i = 0; i < 8; i++)
 		{
+			char buffer[64];
 			average[3][i] = (average[0][i] + average[1][i] + average[2][i]) / 3;
-			fprintf(ptrFile, "%f;", average[3][i]);
+			snprintf(buffer, sizeof buffer, "%f", average[3][i]);
+			replaceChar(buffer, '.', ',');
+			fprintf(ptrFile, "%s;", buffer);
 		}
 		fputs("\n", ptrFile);
 	}
