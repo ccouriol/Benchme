@@ -15,8 +15,8 @@
 #include "../include/header.h"
 #include "../include/bubblesort.h"
 #include "../include/insertionsort.h"
-#include <time.h>
 #include "../include/heapsort.h"
+#include <time.h>
 
 /*!
 * \fn int main(int argc, char **argv)
@@ -45,12 +45,12 @@ int main(int argc, char **argv)
 		return EXIT_FAILURE;
 	}
 
-	fputs("Benchme;selectionAsc;selectionDesc;insertionAsc;insertionDesc;bubbleAsc;bubbleDesc\n", ptrFile);
+	fputs("Benchme;selectionAsc;selectionDesc;insertionAsc;insertionDesc;bubbleAsc;bubbleDesc;heapAsc;heapDesc\n", ptrFile);
 
 	double average[4][8], timeSpent;
-	int maxArraySize = 100;
+	int maxArraySize = 1000;
 
-	for (int arraySize = 10; arraySize < maxArraySize; arraySize *= 10)
+	for (int arraySize = 10; arraySize <= maxArraySize; arraySize *= 10)
 	{
 		clock_t begin, end;
 
@@ -58,8 +58,6 @@ int main(int argc, char **argv)
 		{
 			float array[arraySize];
 			generateArray(array, arraySize);
-			printArr(array, arraySize);
-			puts("---");
 
 			begin = clock();
 			selectionsortAsc(array, arraySize);
@@ -97,21 +95,21 @@ int main(int argc, char **argv)
 			timeSpent = (double)(end - begin) / CLOCKS_PER_SEC;
 			average[j][5] = timeSpent;
 
-			// begin = clock();
-			// heapSortAsc(array, arraySize);
-			// end = clock();
-			// timeSpent = (double)(end - begin) / CLOCKS_PER_SEC;
-			// average[j][6] = timeSpent;
+			begin = clock();
+			heapsortAsc(array, arraySize);
+			end = clock();
+			timeSpent = (double)(end - begin) / CLOCKS_PER_SEC;
+			average[j][6] = timeSpent;
 
-			// begin = clock();
-			// heapSortDesc(array, arraySize);
-			// end = clock();
-			// average[j][7] = timeSpent;
-			// timeSpent = (double)(end - begin) / CLOCKS_PER_SEC;
+			begin = clock();
+			heapsortDesc(array, arraySize);
+			end = clock();
+			average[j][7] = timeSpent;
+			timeSpent = (double)(end - begin) / CLOCKS_PER_SEC;
 		}
 		fprintf(ptrFile, "SIZE %i;", arraySize);
 
-		for (int i = 0; i < 6; i++)
+		for (int i = 0; i < 8; i++)
 		{
 			average[3][i] = (average[0][i] + average[1][i] + average[2][i]) / 3;
 			fprintf(ptrFile, "%f;", average[3][i]);
