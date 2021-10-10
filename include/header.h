@@ -9,6 +9,7 @@
 #define MAXVAL 1000
 
 void printArr(float *arr);
+void printArrCSV(float *arr, void *ptrFile);
 void swap(float *x1, float *x2);
 void generateArray(float *arr);
 

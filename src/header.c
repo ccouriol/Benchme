@@ -28,6 +28,13 @@ void printArr(float *arr)
     printf("%f | ", arr[i]);
 }
 
+void printArrCSV(float *arr, void *ptrFile)
+{
+  for (int i = 0; i < SIZE; i++)
+    fprintf(ptrFile,"%f | ", arr[i]);
+}
+
+
 /*!
 * \fn void swap(float *x, float *y)
 * \author Clement Couriol
