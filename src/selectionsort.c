@@ -24,18 +24,18 @@
 * \param array 
 * \return 
 */
-float *selectionsortAsc(float *array)
+float *selectionsortAsc(float *array, int size)
 {
   int minIdx = 0;
-  float *ptrArray = (float *)malloc(sizeof(float) * SIZE);
-  for (int i = 0; i < SIZE; i++)
+  float *ptrArray = (float *)malloc(sizeof(float) * size);
+  for (int i = 0; i < size; i++)
     ptrArray[i] = array[i];
 
-  for (int i = 0; i < SIZE; i++)
+  for (int i = 0; i < size; i++)
   {
     // index of the minimum value +1 to swap
     minIdx = i;
-    for (int j = i + 1; j < SIZE; j++)
+    for (int j = i + 1; j < size; j++)
     {
       //if we find a smaller value we memorize it
       if (ptrArray[j] < ptrArray[minIdx])
@@ -58,17 +58,17 @@ float *selectionsortAsc(float *array)
 * \param array 
 * \return 
 */
-float *selectionsortDesc(float *array)
+float *selectionsortDesc(float *array, int size)
 {
   int minIdx = 0;
-  float *ptrArray = (float *)malloc(sizeof(float) * SIZE);
-  for (int i = 0; i < SIZE; i++)
+  float *ptrArray = (float *)malloc(sizeof(float) * size);
+  for (int i = 0; i < size; i++)
     ptrArray[i] = array[i];
 
-  for (int i = 0; i < SIZE; i++)
+  for (int i = 0; i < size; i++)
   {
     minIdx = i;
-    for (int j = i + 1; j < SIZE; j++)
+    for (int j = i + 1; j < size; j++)
     {
       if (ptrArray[j] > ptrArray[minIdx])
         minIdx = j;

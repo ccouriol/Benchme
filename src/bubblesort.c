@@ -24,15 +24,15 @@
 * \param param 
 * \return 
 */
-float *bubbleSortAsc(float *param)
+float *bubbleSortAsc(float *param, int size)
 {
     //On alloue en mémoire de l'espace pour notre tableau
-    float *tab = (float *)malloc(sizeof(float) * SIZE);
+    float *tab = (float *)malloc(sizeof(float) * size);
     int i, ending;
     float swap;
 
     //On copie les valeurs
-    for (i = 0; i < SIZE; i++)
+    for (i = 0; i < size; i++)
     {
         tab[i] = *param;
         param++;
@@ -43,7 +43,7 @@ float *bubbleSortAsc(float *param)
     //On va parcourir plusieurs fois le tableau jusqu'a qu'on n'ai plus d'erreur de condition
     while (1)
     {
-        for (i = 0; i < SIZE - 1; i++)
+        for (i = 0; i < size - 1; i++)
         {
             if (tab[i] > tab[i + 1])
             {
@@ -58,7 +58,7 @@ float *bubbleSortAsc(float *param)
                 ending++;
             }
 
-            if (ending == SIZE)
+            if (ending == size)
             {
                 return tab;
             }
@@ -76,15 +76,15 @@ float *bubbleSortAsc(float *param)
 * \param param 
 * \return 
 */
-float *bubbleSortDesc(float *param)
+float *bubbleSortDesc(float *param, int size)
 {
     //On alloue en mémoire de l'espace pour notre tableau
-    float *tab = (float *)malloc(sizeof(float) * SIZE);
+    float *tab = (float *)malloc(sizeof(float) * size);
     int i, ending;
     float swap;
 
     //On copie les valeurs
-    for (i = 0; i < SIZE; i++)
+    for (i = 0; i < size; i++)
     {
         tab[i] = *param;
         param++;
@@ -95,7 +95,7 @@ float *bubbleSortDesc(float *param)
     //On va parcourir plusieurs fois le tableau jusqu'a qu'on n'ai plus d'erreur de condition
     while (1)
     {
-        for (i = 0; i < SIZE - 1; i++)
+        for (i = 0; i < size - 1; i++)
         {
             if (tab[i + 1] > tab[i])
             {
@@ -110,7 +110,7 @@ float *bubbleSortDesc(float *param)
                 ending++;
             }
 
-            if (ending == SIZE)
+            if (ending == size)
             {
                 return tab;
             }

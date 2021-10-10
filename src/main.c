@@ -15,6 +15,7 @@
 #include "../include/header.h"
 #include "../include/bubblesort.h"
 #include "../include/insertionsort.h"
+#include <time.h>
 
 /*!
 * \fn int main(int argc, char **argv)
@@ -29,66 +30,97 @@
 */
 int main(int argc, char **argv)
 {
-	FILE *ptrFile = fopen("/home/dricks/dev/c/Benchme/sort.csv", "w");
-
-	if (ptrFile == NULL)
+	if (argc != 2)
 	{
-		puts("sort.csv cannot open");
+		puts("Please put only/at least one argument");
 		return EXIT_FAILURE;
 	}
 
-	float array[SIZE];
-	generateArray(array);
+	FILE *ptrFile = fopen(argv[1], "w");
 
-	float *selectArrAsc = selectionsortAsc(array);
-	float *selectArrDesc = selectionsortDesc(array);
+	if (ptrFile == NULL)
+	{
+		printf("%s cannot open", argv[1]);
+		return EXIT_FAILURE;
+	}
 
-	float *ptrInsertAsc = insertionSortAsc(array);
-	float *ptrInsertDesc = insertionSortDesc(array);
+	fputs("Benchme;selectionAsc;selectionDesc;insertionAsc;insertionDesc;bubbleAsc;bubbleDesc\n", ptrFile);
 
-	float *ptr_bb_asc = bubbleSortAsc(array);
-	float *ptr_bb_dsc = bubbleSortDesc(array);
+	double average[4][8], timeSpent;
+	int maxArraySize = 100;
 
-	puts("Tableau avec des valeurs aleatoires:");
-	fputs("Tableau avec des valeurs aleatoires:\n", ptrFile);
-	printArr(array);
-	printArrCSV(array, ptrFile);
-	puts("-----");
-	fputs("-----\n", ptrFile);
+	for (int arraySize = 10; arraySize < maxArraySize; arraySize *= 10)
+	{
+		clock_t begin, end;
 
-	printArr(ptrInsertAsc);
-	printArrCSV(ptrInsertAsc, ptrFile);
-	puts("Insertion Asc^");
-	fputs("Insertion Asc^\n", ptrFile);
+		for (int j = 0; j < 3; j++)
+		{
+			float array[arraySize];
+			generateArray(array, arraySize);
+			printArr(array, arraySize);
+			puts("---");
 
-	printArr(ptrInsertDesc);
-	printArrCSV(ptrInsertDesc, ptrFile);
-	puts("Insertion Desc^");
-	fputs("Insertion Desc^\n", ptrFile);
+			begin = clock();
+			selectionsortAsc(array, arraySize);
+			end = clock();
+			timeSpent = (double)(end - begin) / CLOCKS_PER_SEC;
+			average[j][0] = timeSpent;
 
-	printArr(selectArrAsc);
-	printArrCSV(selectArrAsc, ptrFile);
-	puts("Selection Asc^");
-	fputs("Selction Asc^\n", ptrFile);
+			begin = clock();
+			selectionsortDesc(array, arraySize);
+			end = clock();
+			timeSpent = (double)(end - begin) / CLOCKS_PER_SEC;
+			average[j][1] = timeSpent;
 
-	printArr(selectArrDesc);
-	printArrCSV(selectArrDesc, ptrFile);
-	puts("Selection Desc^");
-	fputs("Selection Desc^\n", ptrFile);
+			begin = clock();
+			insertionSortAsc(array, arraySize);
+			end = clock();
+			timeSpent = (double)(end - begin) / CLOCKS_PER_SEC;
+			average[j][2] = timeSpent;
 
-	printArr(ptr_bb_asc);
-	printArrCSV(ptr_bb_asc, ptrFile);
-	puts("Bubble Asc^");
-	fputs("Bubble Asc^\n", ptrFile);
+			begin = clock();
+			insertionSortDesc(array, arraySize);
+			end = clock();
+			timeSpent = (double)(end - begin) / CLOCKS_PER_SEC;
+			average[j][3] = timeSpent;
 
-	printArr(ptr_bb_dsc);
-	printArrCSV(ptr_bb_dsc, ptrFile);
-	puts("Bubble Desc^");
-	fputs("Bubble Desc^\n", ptrFile);
+			begin = clock();
+			bubbleSortAsc(array, arraySize);
+			end = clock();
+			timeSpent = (double)(end - begin) / CLOCKS_PER_SEC;
+			average[j][4] = timeSpent;
+
+			begin = clock();
+			bubbleSortDesc(array, arraySize);
+			end = clock();
+			timeSpent = (double)(end - begin) / CLOCKS_PER_SEC;
+			average[j][5] = timeSpent;
+
+			// begin = clock();
+			// heapSortAsc(array, arraySize);
+			// end = clock();
+			// timeSpent = (double)(end - begin) / CLOCKS_PER_SEC;
+			// average[j][6] = timeSpent;
+
+			// begin = clock();
+			// heapSortDesc(array, arraySize);
+			// end = clock();
+			// average[j][7] = timeSpent;
+			// timeSpent = (double)(end - begin) / CLOCKS_PER_SEC;
+		}
+		fprintf(ptrFile, "SIZE %i;", arraySize);
+
+		for (int i = 0; i < 6; i++)
+		{
+			average[3][i] = (average[0][i] + average[1][i] + average[2][i]) / 3;
+			fprintf(ptrFile, "%f;", average[3][i]);
+		}
+		fputs("\n", ptrFile);
+	}
 
 	if (fclose(ptrFile) == EOF)
 	{
-		puts("sort.csv cannot close successfully");
+		printf("%s cannot close successfully", argv[1]);
 		return EXIT_FAILURE;
 	}
 

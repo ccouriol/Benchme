@@ -22,18 +22,17 @@
 * \remarks None
 * \param arr 
 */
-void printArr(float *arr)
+void printArr(float *arr, int size)
 {
-  for (int i = 0; i < SIZE; i++)
+  for (int i = 0; i < size; i++)
     printf("%f | ", arr[i]);
 }
 
-void printArrCSV(float *arr, void *ptrFile)
+void printArrCSV(float *arr, void *ptrFile, int size)
 {
-  for (int i = 0; i < SIZE; i++)
-    fprintf(ptrFile,"%f | ", arr[i]);
+  for (int i = 0; i < size; i++)
+    fprintf(ptrFile, "%f | ", arr[i]);
 }
-
 
 /*!
 * \fn void swap(float *x, float *y)
@@ -62,10 +61,10 @@ void swap(float *x, float *y)
 * \param arr 
 * \return 
 */
-void generateArray(float *arr)
+void generateArray(float *arr, int size)
 {
-  srand((unsigned int)time(NULL));
+  srand(time(NULL));
 
-  for (int i = 0; i < SIZE; i++)
+  for (int i = 0; i < size; i++)
     arr[i] = ((float)rand() / (float)(RAND_MAX)) * MAXVAL;
 }

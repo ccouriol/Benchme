@@ -3,19 +3,19 @@
 #include "../include/insertionsort.h"
 #include "../include/header.h"
 
-float *insertionSortAsc(float *param)
+float *insertionSortAsc(float *param, int size)
 {
-    float *tab = (float *)malloc(sizeof(float) * SIZE); //On alloue en mémoire de l'espace pour notre tableau
+    float *tab = (float *)malloc(sizeof(float) * size); //On alloue en mémoire de l'espace pour notre tableau
     float mem;
     int i;
 
-    for (i = 0; i < SIZE; i++) //On rempli notre tableau des valeurs pseudo-aléatoires
+    for (i = 0; i < size; i++) //On rempli notre tableau des valeurs pseudo-aléatoires
     {
         tab[i] = *param;
         param++;
     }
 
-    for (i = 0; i < SIZE; i++)
+    for (i = 0; i < size; i++)
     {
 
         mem = tab[i];                      //On met en mémoire le 1er terme, puis le 2nd dans la seconde boucle, etc...
@@ -33,19 +33,19 @@ float *insertionSortAsc(float *param)
 
 //*****************Décroissant
 
-float *insertionSortDesc(float *param)
+float *insertionSortDesc(float *param, int size)
 {
-    float *tab = (float *)malloc(sizeof(float) * SIZE); //On alloue en mémoire de l'espace pour notre tableau
+    float *tab = (float *)malloc(sizeof(float) * size); //On alloue en mémoire de l'espace pour notre tableau
     float mem;
     int i;
 
-    for (i = 0; i < SIZE; i++) //On rempli notre tableau des valeurs pseudo-aléatoires
+    for (i = 0; i < size; i++) //On rempli notre tableau des valeurs pseudo-aléatoires
     {
         tab[i] = *param;
         param++;
     }
 
-    for (i = 0; i < SIZE; i++)
+    for (i = 0; i < size; i++)
     {
 
         mem = tab[i];

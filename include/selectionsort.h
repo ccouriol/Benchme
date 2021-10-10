@@ -3,7 +3,7 @@
 
 #include "../include/header.h"
 
-float *selectionsortAsc(float *array);
-float *selectionsortDesc(float *array);
+float *selectionsortAsc(float *array, int size);
+float *selectionsortDesc(float *array, int size);
 
 #endif

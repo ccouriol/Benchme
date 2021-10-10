@@ -5,12 +5,12 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define SIZE 4
-#define MAXVAL 1000
+// #define SIZE 100
+#define MAXVAL 10
 
-void printArr(float *arr);
-void printArrCSV(float *arr, void *ptrFile);
+void printArr(float *arr, int size);
+void printArrCSV(float *arr, void *ptrFile, int size);
 void swap(float *x1, float *x2);
-void generateArray(float *arr);
+void generateArray(float *arr, int size);
 
 #endif
